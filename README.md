@@ -29,6 +29,7 @@ chat-app/
 └── public/
     ├── index.html      # Интерфейс чата
     └── app.js          # Клиентская логика (обработка событий сокета)
+```
 
 ## ⚙️ Установка и запуск
 
@@ -44,7 +45,7 @@ Docker (для запуска Redis)
 
 ```bash
 docker run -d --name redis-chat -p 6379:6379 redis:latest
-
+```
 (Проверить работу можно командой redis-cli ping — должно вернуться PONG)
 
 3. Установка зависимостей
@@ -52,13 +53,13 @@ docker run -d --name redis-chat -p 6379:6379 redis:latest
 
 ```bash
 npm install express socket.io redis @socket.io/redis-adapter
-
+```
 4. Запуск сервера
 Для запуска в обычном режиме (один экземпляр):
 
 ```bash
 node index.js
-
+```
 Сервер будет доступен по адресу: http://localhost:3000
 
 ## 🧪 Как проверить масштабируемость (Мультиэкземплярность)
@@ -69,12 +70,12 @@ node index.js
 
 ```bash
 node index.js
-
+```
 Откройте второй терминал и запустите второй экземпляр на порту 3001:
 
 ```bash
 PORT=3001 node index.js
-
+```
 Откройте два окна браузера (или обычное и инкогнито):
 
 В первом окне зайдите на http://localhost:3000 и введите имя (например, Alice).
